@@ -2,21 +2,44 @@
 import fs from 'fs';
 import path from 'path';
 import { extractChatGPTApiResponses } from './extractor';
+import { parseLinearChat } from './parser';
+import { generateMarkdown, sanitizeFilename } from './markdown';
 import { HarLog } from './types';
 
-// 1. Datei einlesen (Node.js spezifisch)
-const filePath = path.join(process.cwd(), 'test-data.json');
-const fileContent = fs.readFileSync(filePath, 'utf-8');
+// 0. Setup Output-Ordner
+const outputDir = path.join(process.cwd(), 'output');
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir);
+}
 
-// 2. Parsen
+// 1. HAR einlesen
+const filePath = path.join(process.cwd(), 'test-data.json'); 
+const fileContent = fs.readFileSync(filePath, 'utf-8');
 const harData = JSON.parse(fileContent) as HarLog;
 
-// 3. Unsere reine TS-Logik aufrufen
+// 2. Extrahieren
 const rawChats = extractChatGPTApiResponses(harData);
+console.log(`Es wurden ${rawChats.length} API-Antworten gefunden!\n`);
 
-console.log(`Es wurden ${rawChats.length} Chat-Verläufe in der HAR-Datei gefunden!`);
+let successCount = 0;
 
-if (rawChats.length > 0) {
-    console.log("Erster Chat-JSON-Auszug (erste 200 Zeichen):");
-    console.log(rawChats[0].substring(0, 200) + "...");
+for (const rawChat of rawChats) {
+  const parsedChat = parseLinearChat(rawChat);
+  
+  if (parsedChat) {
+    successCount++;
+    console.log(`Verarbeite: "${parsedChat.title}"...`);
+    
+    // 3. Markdown generieren
+    const mdContent = generateMarkdown(parsedChat.title, parsedChat.messages);
+    
+    // 4. Datei schreiben
+    const safeName = sanitizeFilename(parsedChat.title || 'chat');
+    const outPath = path.join(outputDir, `${safeName}.md`);
+    
+    fs.writeFileSync(outPath, mdContent, 'utf-8');
+    console.log(`✅ Gespeichert unter: output/${safeName}.md\n`);
+  }
 }
+
+console.log(`🎉 Fertig! ${successCount} Chats als Markdown exportiert.`);

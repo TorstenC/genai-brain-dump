@@ -3,6 +3,7 @@
 > *"Das Denkarium für deine KI-Gespräche. Extrahiert ChatGPT & Co. Threads anhand von .har-Files und speichert sie als durchsuchbare Datenbasis."*
 
 ## 🎯 Das Problem: Die GenAI-Demenz
+
 Wer intensiv mit Large Language Models (LLMs) wie ChatGPT, Claude oder Gemini arbeitet, kennt das Problem: Man führt brillante, komplexe Diskussionen, erarbeitet Architektur-Konzepte oder generiert wertvollen Code – und ein paar Wochen später weiß man nicht mehr, in welchem Thread (oder bei welchem Vendor) das besprochen wurde. Die plattformeigenen Suchfunktionen sind oft unzureichend oder gar nicht vorhanden.
 
 **Die Lösung:** `genai-brain-dump` ist ein Open-Source-Tool, das deine Chat-Historien vendor-übergreifend extrahiert, lokal persistiert und vollständig durchsuchbar macht. 100% Privacy, keine Cloud, deine Daten gehören dir.
@@ -30,12 +31,13 @@ Sobald die Kernlogik stabil ist, gießen wir den Code in ein lokales Frontend (C
 
 ## 🛠️ Tech Stack
 
+<!-- markdownlint-disable MD049 -->
 * **Sprache:** TypeScript (für maximale Wiederverwendbarkeit in CLI und Web-Frontend).
-* *(Weitere Frameworks für Phase 2 folgen nach Evaluierung, z.B. Vite, React/Vue).*
+* _(Weitere Frameworks für Phase 2 folgen nach Evaluierung, z.B. Vite, React/Vue)._
 
 ## 🤝 Mitmachen
 <!-- markdownlint-disable MD036 -->
 _(Hinweis: Dieses Projekt ist aktuell in der frühen Aufbauphase. Die primäre Sprache im Repository ist vorerst Deutsch. Ein Issue zur späteren Internationalisierung (Englisch) ist eingeplant.)_
-<!-- markdownlint-restore MD036 -->
+
 ---
-*Initial commit: Denkarium aufgestellt. Erste Erinnerungsfäden sicher extrahiert.* 🧪
+_Initial commit: Denkarium aufgestellt. Erste Erinnerungsfäden sicher extrahiert._ 🧪

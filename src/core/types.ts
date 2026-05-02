@@ -20,4 +20,40 @@ export interface HarLog {
   };
 }
 
+// src/core/types.ts (Ergänzung)
+
+export interface ChatAuthor {
+  role: 'user' | 'assistant' | 'system' | 'tool' | string;
+}
+
+export interface ChatContent {
+  content_type: string;
+  parts?: any[]; // Kann Strings oder Objekte (bei Bildern) enthalten
+}
+
+export interface ChatMessage {
+  id: string;
+  author: ChatAuthor;
+  create_time: number | null;
+  content: ChatContent;
+}
+
+export interface ChatNode {
+  id: string;
+  message?: ChatMessage | null;
+  parent: string | null;
+  children: string[];
+}
+
+export interface ChatGPTData {
+  title: string;
+  current_node: string;
+  mapping: { [key: string]: ChatNode };
+}
+
+export interface LinearMessage {
+  role: string;
+  text: string;
+}
+
 // Später bauen wir hier noch die Typen für den ChatGPT-Baum (mapping, message, author) ein.
