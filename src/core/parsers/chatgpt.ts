@@ -1,5 +1,5 @@
 // src/core/parser.ts
-import { ChatGPTData, ChatNode, LinearMessage } from './types';
+import { ChatGPTData, ChatNode, LinearMessage } from '../types';
 
 export function parseLinearChat(rawJsonString: string): { title: string, messages: LinearMessage[] } | null {
   let data: ChatGPTData;

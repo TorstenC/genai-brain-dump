@@ -41,3 +41,5 @@ _(Hinweis: Dieses Projekt ist aktuell in der frühen Aufbauphase. Die primäre S
 
 ---
 _Initial commit: Denkarium aufgestellt. Erste Erinnerungsfäden sicher extrahiert._ 🧪
+
+<!-- <https://gemini.google.com/app/3a1a36696fd9f9de> -->
