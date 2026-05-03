@@ -2,20 +2,22 @@
 import { LinearMessage } from './types';
 
 export function generateMarkdown(title: string, messages: LinearMessage[]): string {
-  let md = `# ${title}\n\n`;
-
-  // Optional: Metadaten für Obsidian/Logseq hinzufügen
+  let md = '';
   md += `---\n`;
   md += `date: ${new Date().toISOString().split('T')[0]}\n`;
   md += `source: ChatGPT\n`;
   md += `---\n\n`;
+  md += `# ${title}\n`;
+  md += `<!-- markdownlint-disable MD036 -->\n`
 
+  let counter = 1
   for (const msg of messages) {
     if (msg.role === 'user') {
-      md += `## 🧑 User\n\n${msg.text}\n\n---\n\n`;
+      md += `## 🧑 User (${counter})\n\n${msg.text}\n\n---\n\n`;
     } else if (msg.role === 'assistant') {
-      md += `## 🤖 Assistant\n\n${msg.text}\n\n---\n\n`;
+      md += `## 🤖 Assistant (${counter})\n\n${msg.text}\n\n---\n\n`;
     }
+    counter += 1;
   }
 
   return md;

@@ -56,4 +56,11 @@ export interface LinearMessage {
   text: string;
 }
 
+// in src/core/types.ts ergänzen:
+export interface ExtractedChat {
+  vendor: 'ChatGPT' | 'Copilot';
+  title: string;
+  messages: LinearMessage[];
+}
+
 // Später bauen wir hier noch die Typen für den ChatGPT-Baum (mapping, message, author) ein.

@@ -1,17 +1,17 @@
-# Event Merch Socken
-
 ---
-date: 2026-04-30
+date: 2026-05-03
 source: ChatGPT
 ---
 
-## 🧑 User
+# Event Merch Socken
+<!-- markdownlint-disable MD036 -->
+## 🧑 User (1)
 
 Was sind das für Socken (Bild)?
 
 ---
 
-## 🤖 Assistant
+## 🤖 Assistant (2)
 
 Das sind offenbar **Event-/Merch-Socken** mit der Aufschrift:
 
@@ -22,13 +22,13 @@ Das Design ist schwarz mit kräftig pinken Bündchen, Ferse und Zehenbereich. Ob
 
 ---
 
-## 🧑 User
+## 🧑 User (3)
 
 Was steckt hinter dem "Heart & Sole Summit 2025" une warum schreibt main Sohn: "Hast du auch so coole socken? 😉"
 
 ---
 
-## 🤖 Assistant
+## 🤖 Assistant (4)
 
 Ich kann den konkreten Hintergrund **nicht sicher belegen**: Zu **„Heart & Sole Summit 2025“** finde ich keine eindeutige, belastbare öffentliche Trefferlage. Es gibt viele ähnliche Namen wie „Heart & Soul“, „Heart & Sole“-Lauf-/Schuh-/Sport-Kontexte und „Summit“-Events, aber nichts, was eindeutig zu genau diesen Socken passt. Die Aufschrift auf dem Bild wirkt aber sehr klar wie **Merchandise / Giveaway / Teilnehmergeschenk** zu einer Veranstaltung.
 
@@ -44,13 +44,13 @@ Aus dem Bild allein lässt sich also sagen: **Socken vom „Heart & Sole Summit 
 
 ---
 
-## 🧑 User
+## 🧑 User (5)
 
 Windest du keine Quellen zu "Heart & Sole Summit 2025"?
 
 ---
 
-## 🤖 Assistant
+## 🤖 Assistant (6)
 
 Doch — ich habe jetzt gesucht, und ich muss mich korrigieren:
 
