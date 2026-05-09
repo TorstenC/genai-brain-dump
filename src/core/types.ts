@@ -58,7 +58,7 @@ export interface LinearMessage {
 
 // in src/core/types.ts ergänzen:
 export interface ExtractedChat {
-  vendor: 'ChatGPT' | 'Copilot';
+  vendor: 'ChatGPT' | 'Copilot' | 'Gemini';
   title: string;
   messages: LinearMessage[];
 }

@@ -1,0 +1,16 @@
+{
+  "name": "genai-brain-dump",
+  "version": "0.1.0",
+  "description": "Extract and archive GenAI chat histories from HAR files",
+  "scripts": {
+    "test": "ts-node src/core/test.ts",
+    "dev": "ts-node src/core/test.ts"
+  },
+  "keywords": ["chatgpt", "gemini", "copilot", "har", "extraction"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
