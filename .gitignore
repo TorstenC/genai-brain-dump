@@ -41,3 +41,7 @@ dist-ssr
 !tsconfig.json
 !tsconfig.node.json
 !tsconfig.app.json
+
+# Lokale Archiv-Ausgaben nicht versionieren
+output/archive/
+output/.archive/
