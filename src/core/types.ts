@@ -63,4 +63,51 @@ export interface ExtractedChat {
   messages: LinearMessage[];
 }
 
+export type CopilotLocalStatus = 'neu' | 'archiviert' | 'verworfen' | 'todo';
+
+export type CopilotLocalFormat = 'event-stream' | 'consolidated';
+
+export interface CopilotLocalEventLine {
+  type: string;
+  data?: {
+    content?: string;
+    startTime?: string;
+    sessionId?: string;
+    [key: string]: any;
+  };
+  id?: string;
+  timestamp?: string;
+  parentId?: string | null;
+}
+
+export interface CopilotLocalConsolidatedLine {
+  kind: number;
+  k?: string[];
+  v?: any;
+}
+
+export interface CopilotLocalInventorySource {
+  format: CopilotLocalFormat;
+  filePath: string;
+  creationDate: string | null;
+  title: string;
+}
+
+export interface CopilotLocalInventoryItem {
+  sessionId: string;
+  title: string;
+  creationDate: string | null;
+  format: CopilotLocalFormat;
+  filePath: string;
+  status: CopilotLocalStatus;
+  lastProcessed: string | null;
+  sources: CopilotLocalInventorySource[];
+}
+
+export interface CopilotLocalInventory {
+  generatedAt: string;
+  sourcePath: string;
+  items: CopilotLocalInventoryItem[];
+}
+
 // Später bauen wir hier noch die Typen für den ChatGPT-Baum (mapping, message, author) ein.

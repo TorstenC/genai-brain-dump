@@ -4,7 +4,9 @@
   "description": "Extract and archive GenAI chat histories from HAR files",
   "scripts": {
     "test": "ts-node src/core/test.ts",
-    "dev": "ts-node src/core/test.ts"
+    "dev": "ts-node src/core/test.ts",
+    "copilot:local:scan": "ts-node src/cli/copilot-local.ts scan",
+    "copilot:local:extract": "ts-node src/cli/copilot-local.ts extract"
   },
   "keywords": ["chatgpt", "gemini", "copilot", "har", "extraction"],
   "license": "MIT",
