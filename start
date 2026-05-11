@@ -1,0 +1,14 @@
+#!/bin/env bash
+# Kopiert Datei im ersten Parameter nach `test-data.json`
+# und startet `npx tsx src/core/test.ts`.
+
+set -e # Beendet das Skript, wenn ein Fehler auftritt
+
+if [ -z "$1" ]; then
+  echo "Fehler: Kein Dateipfad angegeben."
+  echo "Verwendung: $0 <dateipfad>"
+  exit 1
+fi
+
+cp "$1" test-data.json
+npx tsx src/core/test.ts
